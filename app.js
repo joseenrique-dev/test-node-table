@@ -11,11 +11,16 @@ const multiply = ( base ) => {
         out += `${base} * ${index} = ${base * index}\n`;     
     }
     console.log(out);
-    fs.writeFile(`table-${base}.txt`,out,(err) => {
+    // fs.writeFile(`table-${base}.txt`,out,(err) => {
         
-        if (err) throw err;
-        console.log(`The file table-${base}.txt has been saved!`);
-    });
+    //     if (err) throw err;
+    //     console.log(`The file table-${base}.txt has been saved!`);
+    // });
+    try {
+     fs.writeFileSync(`table-${base}.txt`,out);   
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 multiply(5)
