@@ -17,9 +17,12 @@ const multiply = ( base = 5 ) => {
     //     console.log(`The file table-${base}.txt has been saved!`);
     // });
     try {
-     fs.writeFileSync(`table-${base}.txt`,out);   
+        const fileName = `table-${base}.txt`;
+     fs.writeFileSync(fileName,out);   
+     return Promise.resolve(fileName) // we can do this only with async in the top of the function
     } catch (error) {
         console.log(error);
+        return Promise.reject(error);        
     }
 }
 
