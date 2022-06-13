@@ -1,6 +1,7 @@
 const fs = require('fs');
 
-const multiply = ( base = 5 ) => {
+const multiply = ( base = 5, list = false ) => {
+    console.log('list-->',list);
     console.clear();
     console.log(` =================================== `);
     console.log(` ======== Tabla del ${base} ======== `);
@@ -10,7 +11,8 @@ const multiply = ( base = 5 ) => {
     for (let index = 0; index < 10; index++) {
         out += `${base} * ${index} = ${base * index}\n`;     
     }
-    console.log(out);
+    if( list )
+        console.log(out);
     // fs.writeFile(`table-${base}.txt`,out,(err) => {
         
     //     if (err) throw err;
