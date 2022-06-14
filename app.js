@@ -6,7 +6,7 @@ console.clear();
 
 console.log(argv.base)
 
-multiply(argv.base, argv.list).then(fileName => {
+multiply(argv.base, argv.list, argv.until).then(fileName => {
     console.log(`The file ${fileName} has been saved!`.rainbow);
 }).catch(error => {
     console.log(error);

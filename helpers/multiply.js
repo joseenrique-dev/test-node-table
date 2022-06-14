@@ -1,7 +1,7 @@
 const fs = require('fs');
 const colors = require('colors');
 
-const multiply = ( base = 5, list = false ) => {
+const multiply = ( base = 5, list = false, until = 10 ) => {
     console.log('list-->',list);
     console.clear();
     const colorBase = colors.bgBlue(base);
@@ -10,8 +10,8 @@ const multiply = ( base = 5, list = false ) => {
     console.log(` =================================== `.yellow);
 
     let out = '';
-    for (let index = 0; index < 10; index++) {
-        out += `${colorBase} * ${index} =` +`${base * index}\n`.trap;     
+    for (let index = 0; index < until; index++) {
+        out += `${colorBase}`+ `  *`.green+` ${index}` +` =  `.green +`${base * index}\n`.trap;     
     }
     if( list )
         console.log(out);

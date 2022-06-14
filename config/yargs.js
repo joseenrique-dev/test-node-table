@@ -6,6 +6,12 @@ const argv = require('yargs')
     type: 'boolean',
     default: false
 })
+.option('u', {
+    alias: 'until',
+    demand: true,
+    type: 'number',
+    description: 'until which number to multiply'
+})
 .option('b', {
     alias: 'base',
     demand: true,
