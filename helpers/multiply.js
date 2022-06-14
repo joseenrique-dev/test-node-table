@@ -15,14 +15,9 @@ const multiply = ( base = 5, list = false, until = 10 ) => {
     }
     if( list )
         console.log(out);
-    // fs.writeFile(`table-${base}.txt`,out,(err) => {
-        
-    //     if (err) throw err;
-    //     console.log(`The file table-${base}.txt has been saved!`);
-    // });
     try {
         const fileName = `table-${base}.txt`;
-     fs.writeFileSync(fileName,out);   
+     fs.writeFileSync(`./outFiles/${fileName}`,out);   
      return Promise.resolve(fileName) // we can do this only with async in the top of the function
     } catch (error) {
         console.log(error);
